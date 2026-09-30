@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-30",
+  "passed": [
+    "Fog starts opaque",
+    "Pointer position is local to the smaller window",
+    "Finger clears local fog while surrounding glass stays foggy",
+    "Exterior rain never clears interior fog",
+    "Wet switch disables creation of new finger beads",
+    "Fog off disables drawing and finger condensation",
+    "Resize preserves proportional drawing position",
+    "Pointer capture paints a continuous stroke and releases",
+    "Reduced rain does not create new drops when set to zero",
+    "All control changes update their state",
+    "Car and train select separate scenes and reset condensation",
+    "Reset restores all fog and clears interior droplets",
+    "Rain simulation remains bounded and produces finite coordinates",
+    "Sound button initializes graph and toggles gain state (mock audio)"
+  ],
+  "scope": "Offline Canvas pixel tests and mocked DOM/audio behavior only. Browser rendering, GLSL compilation, live sound and physical touch hardware have not been verified.",
+  "count": 14
+}

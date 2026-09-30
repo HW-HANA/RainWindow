@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#141a1b"><title>听窗 · RainWindow</title><link rel="stylesheet" href="style.css"></head>
+<body data-scene="train">
+<div class="ambient" aria-hidden="true"></div>
+<header><a class="brand" href="./" aria-label="听窗首页"><span class="brand-icon">◫</span> 听窗 <span>RainWindow</span></a><div class="header-note"><i></i> 给自己一点，什么也不做的时间</div><button id="immersive" class="icon-button" aria-label="进入沉浸模式" title="沉浸模式 · Esc 退出">⛶</button></header>
+<main>
+ <section class="intro"><div class="eyebrow">A LITTLE SPACE, JUST FOR YOU</div><h1>把世界，留在窗外。</h1><p>听雨落下来，在雾气上写点什么。</p></section>
+ <div class="scene-tabs" role="group" aria-label="窗外场景"><button data-scene="train" aria-pressed="true"><span>▤</span> 雨中列车</button><button data-scene="car" aria-pressed="false"><span>▱</span> 城市夜车</button></div>
+ <section class="stage" id="stage" aria-label="雨窗互动区">
+  <div class="cabin-detail cabin-left" aria-hidden="true"></div><div class="cabin-detail cabin-right" aria-hidden="true"></div>
+  <div class="window-assembly" id="assembly"><div class="outer-rim"><div class="gasket"><div class="glass" id="glass">
+   <canvas id="rain" aria-label="雨滴与窗外风景"></canvas><canvas id="touch" tabindex="0" aria-label="按住鼠标或手指，在雾面玻璃上绘画"></canvas><div class="reflection"></div><div class="glass-edge"></div><div class="draw-hint" id="drawHint"><span>﹏</span> 用手指，在雾上留下片刻</div>
+   <div class="fallback" id="fallback" hidden>当前浏览器无法开启图形加速。<br>请使用支持 WebGL 2 的浏览器重新打开。</div>
+  </div></div></div><div class="window-sill"></div></div>
+  <div class="scene-label"><span id="sceneNumber">01 / THE SLOW TRAIN</span><span id="sceneCaption">灯火渐远，雨还在下</span></div>
+ </section>
+ <section class="console" aria-label="雨窗设置">
+  <div class="primary-controls"><button id="sound" class="sound-button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4m12 0a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></svg><span id="soundLabel">开启声音</span><span class="sound-bars"><i></i><i></i><i></i></span></button><div class="control-divider"></div><button id="fogToggle" class="text-button" aria-pressed="true">雾气 <span class="switch"></span></button><button id="wetToggle" class="text-button" aria-pressed="true">指尖留水滴 <span class="switch"></span></button><button id="reset" class="text-button reset-button"><span>↻</span> 重新起雾</button><button id="settings" class="settings-button" aria-expanded="false" aria-controls="settingsPanel">调节 <span>＋</span></button></div>
+  <div class="settings-panel" id="settingsPanel" hidden>
+   <label>雨势 <output id="rainAmountValue">55%</output><input id="rainAmount" type="range" min="0" max="100" value="55"></label>
+   <label>雾气浓度 <output id="fogAmountValue">62%</output><input id="fogAmount" type="range" min="10" max="100" value="62"></label>
+   <label>指尖宽度 <output id="brushValue">28 px</output><input id="brush" type="range" min="12" max="64" value="28"></label>
+   <label>窗户大小 <output id="windowSizeValue">标准</output><input id="windowSize" type="range" min="68" max="100" value="88"></label>
+   <label>声音大小 <output id="volumeValue">45%</output><input id="volume" type="range" min="0" max="100" value="45"></label>
+   <label>车外亮度 <output id="outsideValue">100%</output><input id="outside" type="range" min="35" max="140" value="100"></label>
+   <label>车内亮度 <output id="insideValue">55%</output><input id="inside" type="range" min="0" max="100" value="55"></label>
+   <div class="extra-controls"><button id="motion" class="text-button" aria-pressed="true">列车轻晃 <span class="switch"></span></button><label class="upload-button">换成我的风景 <input id="photo" type="file" accept="image/*" hidden></label><button id="defaultView" class="text-button">恢复风景</button></div>
+  </div>
+ </section>
+ <p class="footnote"><span class="headphone">♧</span> 戴上耳机，让这一刻慢一点。<span class="local-note">所有涂画，只留在这一扇窗上。</span></p>
+</main><footer><span>RainWindow — A WINDOW TO PAUSE</span><span>雨没有目的地，你也可以。</span></footer><div id="toast" role="status"></div><button id="exitImmersive" hidden>退出沉浸 · Esc</button>
+<script src="app.js"></script></body></html>
