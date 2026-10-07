@@ -1,21 +1,15 @@
 {
-  "date": "2026-09-30",
-  "passed": [
-    "Fog starts opaque",
-    "Pointer position is local to the smaller window",
-    "Finger clears local fog while surrounding glass stays foggy",
-    "Exterior rain never clears interior fog",
-    "Wet switch disables creation of new finger beads",
-    "Fog off disables drawing and finger condensation",
-    "Resize preserves proportional drawing position",
-    "Pointer capture paints a continuous stroke and releases",
-    "Reduced rain does not create new drops when set to zero",
-    "All control changes update their state",
-    "Car and train select separate scenes and reset condensation",
-    "Reset restores all fog and clears interior droplets",
-    "Rain simulation remains bounded and produces finite coordinates",
-    "Sound button initializes graph and toggles gain state (mock audio)"
+  "date": "2026-10-07",
+  "changes": [
+    "默认32%薄雾，浓度可降到0%",
+    "雾面模糊单独调节",
+    "擦开显示清晰原图",
+    "上传图片保持位置",
+    "窗户宽度与高度分别调节，高度180–900 px"
   ],
-  "scope": "Offline Canvas pixel tests and mocked DOM/audio behavior only. Browser rendering, GLSL compilation, live sound and physical touch hardware have not been verified.",
-  "count": 14
+  "checks": {
+    "javascriptSyntax": "passed",
+    "canvasPixelTests": "passed at desktop/mobile canvas sizes with mocked DOM",
+    "realBrowser": "pending"
+  }
 }
